@@ -1,0 +1,69 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "ignorePatterns": ["node_modules", "build", "coverage"],
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "serviceworker": true,
+    "cypress/globals": true
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "jsx-a11y",
+    "jest-dom",
+    "cypress",
+    "prettier"
+  ],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:jest-dom/recommended",
+    "plugin:cypress/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "camelcase": "off",
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    // eslint-plugin-import rules
+    "import/named": "error",
+    "import/namespace": "error",
+    "import/default": "error",
+    "import/export": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "parent", "sibling", "index"],
+        "alphabetize": {
+          "order": "asc"
+        },
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"]
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never",
+        "js": "never",
+        "jsx": "never"
+      }
+    ]
+  }
+}
