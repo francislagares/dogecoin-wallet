@@ -14,7 +14,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["jest", "node", "cypress"],
+    "types": ["jest", "node"],
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/common/components/*"],
@@ -31,5 +31,5 @@
     "next.config.js",
     "lint-staged.config.js"
   ],
-  "exclude": ["node_modules", "cypress"]
+  "exclude": ["node_modules"]
 }

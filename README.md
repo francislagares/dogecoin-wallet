@@ -1,43 +1,60 @@
-# Boilerplate-Next
+# Run app locally
 
-Follow along with how I made this via the step-by-step post here on
-[Medium](https://wk0.medium.com/create-a-typescript-nextjs-project-with-jest-cypress-adbbcf237747)
+- Clone the repo
 
-Bare-bones
+  ```bash
+  $ git clone https://github.com/francislagares/dogecoin-wallet.git
+  ```
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/wk0/boilerplate-next)
+- Install the dependencies by running the following command.
 
----
+  ```bash
+  yarn install
+  ```
 
-With TailwindCSS
+- Start the development server:
 
-Step by step guide to setting up with Tailwind:
-[Medium](https://wk0.medium.com/adding-tailwind-to-a-nextjs-typescript-project-d1eba5699c4d)
+  ```bash
+  yarn dev
+  ```
 
-[![Deploy with Vercel](https://vercel.com/button)](https://github.com/wk0/boilerplate-next/tree/tailwind)
+  Open [http://localhost:3000](http://localhost:3000) with your browser to see
+  the result.
 
----
+# Log inside the app
 
-With Web3
+## Login Credentials
 
-Step by step guide to setting up with Web3:
-[Medium](https://wk0.medium.com/adding-web3-to-our-nextjs-typescript-project-861e9ed5feaf)
+Email: dogecoin@test.com
 
-[![Deploy with Vercel](https://vercel.com/button)](https://github.com/wk0/boilerplate-next/tree/web3-eth)
+Pass: 1234
 
----
+# Run app with Docker
 
-As a Monorepo
+- Building an image
 
-How to convert: [Medium](https://medium.com/p/bf4007fdfa87)
+  ```bash
+  $ docker build -t dogecoin-wallet:latest .
+  ```
 
-[![Deploy with Vercel](https://vercel.com/button)](https://github.com/wk0/boilerplate-next/tree/as-workspace)
+- Running a container
 
----
+  ```bash
+  $ docker run -p 3000:3000 dogecoin-wallet:latest
+  ```
 
-With Contracts
+  Open [http://localhost:3000](http://localhost:3000) with your browser to see
+  the result.
 
-How to add hardhat:
-[Medium](https://medium.com/@wk0/integrating-smart-contracts-using-hardhat-with-nextjs-typescript-7206890b9cd8)
+- Stopping a container
 
-[![Deploy with Vercel](https://vercel.com/button)](https://github.com/wk0/boilerplate-next/tree/with-contracts)
+  ```bash
+  $ docker stop dogecoin-wallet:latest
+  ```
+
+# Author
+
+Created by [@francislagares](https://www.linkedin.com/in/francislagares/) - feel
+free to contact me!
+
+-
