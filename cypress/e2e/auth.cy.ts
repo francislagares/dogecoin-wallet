@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
 describe('Authentication', () => {
   it('displays signin button', () => {
     cy.visit('/');

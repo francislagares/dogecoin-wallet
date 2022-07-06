@@ -12,7 +12,7 @@
     "cypress:open": "env-cmd -f .env.test.local cypress open",
     "cypress:start": "start-server-and-test 'yarn start:test' 3000 'yarn cypress:open'",
     "cypress:build": "yarn build:test && yarn cypress:start",
-    "cypress:run": "start-server-and-test 'yarn start:test' 3000 'env-cmd -f .env.test.local cypress run'"
+    "cypress:run": "start-server-and-test 'yarn start:test' 3000 'env-cmd -f .env cypress run'"
   },
   "husky": {
     "hooks": {

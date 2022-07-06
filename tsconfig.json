@@ -14,7 +14,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["cypress", "jest", "node"],
+    "types": ["cypress", "@testing-library/cypress", "jest", "node"],
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/common/components/*"],
@@ -23,11 +23,9 @@
     }
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "cypress",
-    "@testing-library/cypress",
     "tailwind.config.js",
     "postcss.config.js",
     "next.config.js",
