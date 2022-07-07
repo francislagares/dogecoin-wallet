@@ -17,8 +17,8 @@
     "types": ["cypress", "@testing-library/cypress", "jest", "node"],
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/common/components/*"],
-      "@styles/*": ["src/common/styles/*"],
+      "@components/*": ["src/components/*"],
+      "@styles/*": ["src/styles/*"],
       "@pages/*": ["src/pages/*"]
     }
   },

@@ -9,6 +9,7 @@ export default NextAuth({
 
   providers: [
     CredentialProvider({
+      id: 'credentials',
       name: 'credentials',
       credentials: {
         username: {
@@ -28,6 +29,10 @@ export default NextAuth({
           .collection('User')
           .findOne({ email: 'dogecoin@test.com' });
 
+        if (!user) {
+          throw new Error('User not found!');
+        }
+
         if (
           credentials?.username === user?.email &&
           credentials?.password === user?.password
@@ -40,6 +45,16 @@ export default NextAuth({
       },
     }),
   ],
+  /* pages: {
+    signIn: '/auth/signin',
+  }, */
+  session: {
+    // reference: https://next-auth.js.org/configuration/options#session
+    strategy: 'jwt',
+
+    // Seconds - How long until an idle session expires and is no longer valid.
+    maxAge: 24 * 60 * 60 * 1000, // 24 hours
+  },
   callbacks: {
     jwt: ({ token, user }) => {
       // first time jwt callback is run, user object is available

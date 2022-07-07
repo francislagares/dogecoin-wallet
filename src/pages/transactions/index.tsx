@@ -2,6 +2,7 @@ import { MongoClient } from 'mongodb';
 import { GetServerSideProps } from 'next';
 import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import Button from 'src/components/button';
 import TransactionItem from 'src/components/transactionItem';
 import { ITransaction } from 'src/types';
 
@@ -27,41 +28,27 @@ const Transactions = ({ transactions }: IProps) => {
         <div className='min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8'>
           <div className='max-w-md w-full space-y-8'>
             Signed in as {session.user?.email} <br />
-            <button
-              type='button'
-              onClick={() => signOut()}
-              className='group relative w-full flex justify-center py-2 px-4 border
-          border-transparent text-sm font-medium rounded-md text-white bg-indigo-600
-          hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-indigo-500'
-            >
-              Sign out
-            </button>
-            <button
+            <Button type='button' onClick={() => signOut()}>
+              Sign Out
+            </Button>
+            <Button
               type='button'
               onClick={() => router.push('/transactions/add-transaction')}
-              className='group relative w-full flex justify-center py-2 px-4 border
-                border-transparent text-sm font-medium rounded-md text-white bg-indigo-600
-                hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-indigo-500'
             >
               Add Transaction
-            </button>
+            </Button>
           </div>
         </div>
       ) : (
         <div className='min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8'>
           <div className='max-w-md w-full space-y-8 text-center'>
             Not signed in <br />
-            <button
+            <Button
               type='button'
-              onClick={() => {
-                router.push('/api/auth/signin');
-              }}
-              className='group relative w-full flex justify-center py-2 px-4 border
-                border-transparent text-sm font-medium rounded-md text-white bg-indigo-600
-                hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-indigo-500'
+              onClick={() => router.push('/api/auth/signin')}
             >
-              Sign in
-            </button>
+              Sign In
+            </Button>
           </div>
         </div>
       )}
